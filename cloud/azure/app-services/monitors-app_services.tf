@@ -39,7 +39,7 @@ resource "datadog_monitor" "appservices_response_time" {
 resource "datadog_monitor" "appservices_memory_usage_count" {
   name    = "[${var.environment}] App Services memory usage > ${ceil(var.memory_usage_threshold_critical/1000000)}MiB on {{name}}"
   type    = "metric alert"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     avg(last_5m): (
@@ -68,7 +68,7 @@ resource "datadog_monitor" "appservices_memory_usage_count" {
 resource "datadog_monitor" "appservices_http_5xx_errors_count" {
   name    = "[${var.environment}] App Services HTTP 5xx errors is {{value}}% above the limit on {{name}}"
   type    = "metric alert"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
@@ -98,7 +98,7 @@ resource "datadog_monitor" "appservices_http_5xx_errors_count" {
 resource "datadog_monitor" "appservices_http_4xx_errors_count" {
   name    = "[${var.environment}] App Services HTTP 4xx errors is {{value}}% above the limit on {{name}}"
   type    = "metric alert"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (

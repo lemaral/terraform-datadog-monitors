@@ -1,6 +1,6 @@
 resource "datadog_monitor" "too_many_jobs_failed" {
   name    = "[${var.environment}] IOT Hub Too many jobs failed on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
           sum(last_5m):(
@@ -33,7 +33,7 @@ resource "datadog_monitor" "too_many_jobs_failed" {
 
 resource "datadog_monitor" "too_many_list_jobs_failed" {
   name    = "[${var.environment}] IOT Hub Too many list_jobs failure on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
           sum(last_5m):(
@@ -66,7 +66,7 @@ resource "datadog_monitor" "too_many_list_jobs_failed" {
 
 resource "datadog_monitor" "too_many_query_jobs_failed" {
   name    = "[${var.environment}] IOT Hub Too many query_jobs failed on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m):(
@@ -147,7 +147,7 @@ resource "datadog_monitor" "total_devices" {
 
 resource "datadog_monitor" "too_many_c2d_methods_failed" {
   name    = "[${var.environment}] IOT Hub Too many c2d methods failure on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m):(
@@ -180,7 +180,7 @@ resource "datadog_monitor" "too_many_c2d_methods_failed" {
 
 resource "datadog_monitor" "too_many_c2d_twin_read_failed" {
   name    = "[${var.environment}] IOT Hub Too many c2d twin read failure on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m):(
@@ -213,7 +213,7 @@ resource "datadog_monitor" "too_many_c2d_twin_read_failed" {
 
 resource "datadog_monitor" "too_many_c2d_twin_update_failed" {
   name    = "[${var.environment}] IOT Hub Too many c2d twin update failure on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m):(
@@ -246,7 +246,7 @@ resource "datadog_monitor" "too_many_c2d_twin_update_failed" {
 
 resource "datadog_monitor" "too_many_d2c_twin_read_failed" {
   name    = "[${var.environment}] IOT Hub Too many d2c twin read failure on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m):(
@@ -279,7 +279,7 @@ resource "datadog_monitor" "too_many_d2c_twin_read_failed" {
 
 resource "datadog_monitor" "too_many_d2c_twin_update_failed" {
   name    = "[${var.environment}] IOT Hub Too many d2c twin update failure on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m):(
@@ -312,7 +312,7 @@ resource "datadog_monitor" "too_many_d2c_twin_update_failed" {
 
 resource "datadog_monitor" "too_many_d2c_telemetry_egress_dropped" {
   name    = "[${var.environment}] IOT Hub Too many d2c telemetry egress dropped on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
       sum(last_5m): (
@@ -343,7 +343,7 @@ resource "datadog_monitor" "too_many_d2c_telemetry_egress_dropped" {
 
 resource "datadog_monitor" "too_many_d2c_telemetry_egress_orphaned" {
   name    = "[${var.environment}] IOT Hub Too many d2c telemetry egress orphaned on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
@@ -374,7 +374,7 @@ resource "datadog_monitor" "too_many_d2c_telemetry_egress_orphaned" {
 
 resource "datadog_monitor" "too_many_d2c_telemetry_egress_invalid" {
   name    = "[${var.environment}] IOT Hub Too many d2c telemetry egress invalid on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
@@ -405,7 +405,7 @@ resource "datadog_monitor" "too_many_d2c_telemetry_egress_invalid" {
 
 resource "datadog_monitor" "too_many_d2c_telemetry_egress_fallback" {
   name    = "[${var.environment}] IOT Hub Too many d2c telemetry egress fallback on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
@@ -436,7 +436,7 @@ resource "datadog_monitor" "too_many_d2c_telemetry_egress_fallback" {
 
 resource "datadog_monitor" "too_many_d2c_telemetry_ingress_nosent" {
   name    = "[${var.environment}] IOT Hub Too many d2c telemetry ingress no sent on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (

@@ -38,7 +38,7 @@ resource "datadog_monitor" "apimgt_status" {
 
 resource "datadog_monitor" "apimgt_failed_requests" {
   name    = "[${var.environment}] API Management {{name}} too much failed requests"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
@@ -68,7 +68,7 @@ resource "datadog_monitor" "apimgt_failed_requests" {
 
 resource "datadog_monitor" "apimgt_other_requests" {
   name    = "[${var.environment}] API Management {{name}} too much other requests"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
@@ -98,7 +98,7 @@ resource "datadog_monitor" "apimgt_other_requests" {
 
 resource "datadog_monitor" "apimgt_unauthorized_requests" {
   name    = "[${var.environment}] API Management {{name}} too much unauthorized requests"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
@@ -128,7 +128,7 @@ resource "datadog_monitor" "apimgt_unauthorized_requests" {
 
 resource "datadog_monitor" "apimgt_successful_requests" {
   name    = "[${var.environment}] API Management {{name}} successful requests rate too low"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (

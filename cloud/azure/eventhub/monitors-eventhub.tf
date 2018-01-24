@@ -32,7 +32,7 @@ resource "datadog_monitor" "eventhub_status" {
 
 resource "datadog_monitor" "eventhub_failed_requests" {
   name    = "[${var.environment}] Event Hub too much failed requests on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
         sum(last_5m): (
