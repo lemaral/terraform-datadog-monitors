@@ -63,7 +63,7 @@ resource "datadog_monitor" "su_utilization" {
 
 resource "datadog_monitor" "failed_function_requests" {
   name    = "[${var.environment}] Stream Analytics more than ${var.failed_function_requests_threshold_critical} failed function requests on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
@@ -95,7 +95,7 @@ resource "datadog_monitor" "failed_function_requests" {
 
 resource "datadog_monitor" "conversion_errors" {
   name    = "[${var.environment}] Stream Analytics more than ${var.conversion_errors_threshold_critical} conversion errors on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     avg(last_5m): (
@@ -126,7 +126,7 @@ resource "datadog_monitor" "conversion_errors" {
 
 resource "datadog_monitor" "runtime_errors" {
   name    = "[${var.environment}] Stream Analytics more than ${var.runtime_errors_threshold_critical} runtime errors on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     avg(last_5m): (

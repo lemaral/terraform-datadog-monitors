@@ -240,7 +240,7 @@ EOF
 
 resource "datadog_monitor" "authorization_error_requests" {
   name    = "[${var.environment}] Azure Storage {{value}}% of authorization error requests on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     avg(last_5m): (

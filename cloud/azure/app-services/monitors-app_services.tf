@@ -10,7 +10,7 @@ data "template_file" "filter" {
 resource "datadog_monitor" "appservices_response_time" {
   name    = "[${var.environment}] App Services response time of {{value}}s is to high on {{name}}"
   type    = "metric alert"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     avg(last_5m): (
@@ -128,7 +128,7 @@ resource "datadog_monitor" "appservices_http_4xx_errors_count" {
 resource "datadog_monitor" "appservices_http_success_status_rate" {
   name    = "[${var.environment}] App Services HTTP successful responses is {{value}}% below the limit on {{name}}"
   type    = "metric alert"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     sum(last_5m): (
