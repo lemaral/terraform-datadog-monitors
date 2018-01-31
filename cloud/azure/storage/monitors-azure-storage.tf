@@ -37,7 +37,7 @@ EOF
 
 resource "datadog_monitor" "successful_requests" {
   name    = "[${var.environment}] Azure Storage {{name}} too much failed requests"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     avg(last_5m): (
@@ -66,7 +66,7 @@ EOF
 
 resource "datadog_monitor" "latency" {
   name    = "[${var.environment}] Azure Storage {{name}} too high end to end latency"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     max(last_5m): (
@@ -211,7 +211,7 @@ EOF
 
 resource "datadog_monitor" "client_other_error_requests" {
   name    = "[${var.environment}] Azure Storage {{value}}% of client_other error requests on {{name}}"
-  message = "${var.message}"
+  message = "muted - see Zendesk 16029"
 
   query = <<EOF
     avg(last_5m): (
