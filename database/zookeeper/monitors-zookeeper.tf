@@ -5,7 +5,7 @@ resource "datadog_monitor" "not_responding" {
   type    = "service check"
 
   query = <<EOQ
-    "zookeeper.ruok"${module.filter-tags.service_check}.by("server","host").last(6).count_by_status()
+    "zookeeper.ruok"${module.filter-tags.service_check}.by(${join(",", formatlist("\"%s\"", var.not_responding_group_by))}).last(6).count_by_status()
 EOQ
 
   thresholds = {
@@ -39,7 +39,7 @@ resource "datadog_monitor" "datadog_monitor_zookeeper_latency" {
 
   query = <<EOQ
     ${var.zookeeper_latency_time_aggregator}(${var.zookeeper_latency_timeframe}): (
-     zookeeper.avg_latency${module.filter-tags.query_alert} by {host}) > ${var.zookeeper_latency_threshold_critical}
+     zookeeper.avg_latency${module.filter-tags.query_alert} by {${join(",", var.zookeeper_latency_group_by)}}) > ${var.zookeeper_latency_threshold_critical}
 EOQ
 
   thresholds = {

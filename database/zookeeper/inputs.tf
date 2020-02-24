@@ -54,6 +54,12 @@ variable "not_responding_no_data_timeframe" {
   type        = number
 }
 
+variable "not_responding_group_by" {
+  default     = ["host", "server"]
+  type        = list(string)
+  description = "List of tags to use to group data"
+}
+
 variable "zookeeper_not_responding_enabled" {
   description = "Flag to enable Zookeeper does not respond monitor"
   type        = string
@@ -115,6 +121,12 @@ variable "zookeeper_latency_enabled" {
   description = "Flag to enable Zookeeper read latency monitor"
   type        = string
   default     = "true"
+}
+
+variable "zookeeper_latency_group_by" {
+  description = "Tags to use to group datas"
+  type        = list(string)
+  default     = ["host"]
 }
 
 variable "zookeeper_latency_status_message" {
