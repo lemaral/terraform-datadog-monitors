@@ -31,6 +31,7 @@ Creates DataDog monitors with the following checks:
 | filter\_tags\_use\_defaults | Use default filter tags convention | `string` | `"true"` | no |
 | message | Message sent when a monitor is triggered | `any` | n/a | yes |
 | new\_host\_delay | Delay in seconds before begin to monitor new host | `number` | `300` | no |
+| not\_responding\_group\_by | List of tags to use to group data | `list(string)` | <pre>[<br>  "host",<br>  "server"<br>]<br></pre> | no |
 | not\_responding\_locked | Lock Zookeeper not responding monitor | `bool` | `false` | no |
 | not\_responding\_no\_data\_timeframe | Zookeeper monitor no\_data\_timeframe | `number` | `10` | no |
 | not\_responding\_notify\_audit | Enable or not notify audit on Zookeeper not responding monitor | `bool` | `false` | no |
@@ -40,6 +41,7 @@ Creates DataDog monitors with the following checks:
 | prefix\_slug | Prefix string to prepend between brackets on every monitors names | `string` | `""` | no |
 | zookeeper\_latency\_availability\_extra\_tags | Extra tags for zookeeper read latency monitor | `list(string)` | `[]` | no |
 | zookeeper\_latency\_enabled | Flag to enable Zookeeper read latency monitor | `string` | `"true"` | no |
+| zookeeper\_latency\_group\_by | Tags to use to group datas | `list(string)` | <pre>[<br>  "host"<br>]<br></pre> | no |
 | zookeeper\_latency\_notify\_audit | Enable or not notify audit on Zookeeper latency monitor | `bool` | `false` | no |
 | zookeeper\_latency\_status\_message | Custom message for Zookeeper read latency monitor | `string` | `""` | no |
 | zookeeper\_latency\_threshold\_critical | Maximum critical acceptable ms of zookeeper latency monitor | `number` | `300000` | no |
